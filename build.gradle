@@ -1,0 +1,32 @@
+buildscript {
+    dependencies {
+      classpath 'com.apollographql.apollo:apollo-gradle-plugin:2.5.11'
+    }
+}
+
+plugins {
+	id 'org.springframework.boot' version '2.6.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'com.apollographql.apollo' version '2.5.11'
+}
+
+apply plugin: "com.apollographql.apollo"
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'com.apollographql.apollo:apollo-runtime:2.5.11'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

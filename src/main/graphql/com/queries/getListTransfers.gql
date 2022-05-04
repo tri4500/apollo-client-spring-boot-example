@@ -1,0 +1,9 @@
+query getListTransfers($filter: TransferEntity_filter!) {
+  transferEntities(where: $filter) {
+    id
+    address
+    from
+    to
+    tokenId
+  }
+}
